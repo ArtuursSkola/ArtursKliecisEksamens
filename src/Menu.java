@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -32,10 +33,15 @@ public class Menu extends JFrame {
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 784, 561);
+		contentPane.add(lblNewLabel);
 		
 		ImageIcon bilde = new ImageIcon(getClass().getResource("/resources/back.jpg"));
-		setContentPane(contentPane);
+		lblNewLabel.setIcon(bilde);
 	}
 
 }
