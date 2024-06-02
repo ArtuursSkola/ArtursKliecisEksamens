@@ -112,7 +112,7 @@ public class Tests extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton Iesniegt = new JButton("Iesniegt");
+		Iesniegt = new JButton("Iesniegt");
 		Iesniegt.setBackground(new Color(0, 0, 0));
 		Iesniegt.setForeground(new Color(0, 0, 0));
 		Iesniegt.setBounds(329, 434, 136, 48);
@@ -123,32 +123,31 @@ public class Tests extends JFrame {
 			}
 		});
 		
-		JLabel Jautaj = new JLabel("New label");
+		Jautaj = new JLabel("New label");
 		Jautaj.setForeground(new Color(255, 255, 255));
 		Jautaj.setBounds(394, 158, 216, 157);
 		contentPane.add(Jautaj);
 		
-		JLabel otrTeksts = new JLabel("New label");
+		pirmTeksts = new JLabel("New label");
+		pirmTeksts.setForeground(new Color(255, 255, 255));
+		pirmTeksts.setBounds(78, 131, 188, 25);
+		contentPane.add(pirmTeksts);
+		
+		otrTeksts = new JLabel("New label");
 		otrTeksts.setForeground(Color.WHITE);
 		otrTeksts.setBounds(78, 187, 188, 25);
 		contentPane.add(otrTeksts);
 		
-
-		
-		JLabel ctrTeksts = new JLabel("New label");
-		ctrTeksts.setForeground(Color.WHITE);
-		ctrTeksts.setBounds(78, 302, 188, 25);
-		contentPane.add(ctrTeksts);
-		
-		JLabel trsTeksts = new JLabel("New label");
+		trsTeksts = new JLabel("New label");
 		trsTeksts.setForeground(Color.WHITE);
 		trsTeksts.setBounds(78, 246, 188, 25);
 		contentPane.add(trsTeksts);
 		
-		JLabel pirmTeksts = new JLabel("New label");
-		pirmTeksts.setForeground(new Color(255, 255, 255));
-		pirmTeksts.setBounds(78, 131, 188, 25);
-		contentPane.add(pirmTeksts);
+		
+		ctrTeksts = new JLabel("New label");
+		ctrTeksts.setForeground(Color.WHITE);
+		ctrTeksts.setBounds(78, 302, 188, 25);
+		contentPane.add(ctrTeksts);
 		
 		JLabel lblNewLabel_1 = new JLabel("1. Jautājums");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 34));
@@ -165,23 +164,23 @@ public class Tests extends JFrame {
 		separator.setBounds(32, 133, 8, 196);
 		contentPane.add(separator);
 		
-		JRadioButton cetIzv = new JRadioButton("");
+		cetIzv = new JRadioButton("");
 		cetIzv.setBackground(new Color(0, 0, 0));
 		cetIzv.setBounds(44, 304, 21, 23);
 		contentPane.add(cetIzv);
 		
-		JRadioButton tresIzv = new JRadioButton("");
+		tresIzv = new JRadioButton("");
 		tresIzv.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		tresIzv.setBackground(new Color(0, 0, 0));
 		tresIzv.setBounds(44, 247, 21, 23);
 		contentPane.add(tresIzv);
 		
-		JRadioButton pirmIzv = new JRadioButton("");
+		pirmIzv = new JRadioButton("");
 		pirmIzv.setBackground(new Color(0, 0, 0));
 		pirmIzv.setBounds(44, 133, 21, 23);
 		contentPane.add(pirmIzv);
 		
-		JRadioButton otrIzv = new JRadioButton("");
+		otrIzv = new JRadioButton("");
 		otrIzv.setBackground(new Color(0, 0, 0));
 		otrIzv.setBounds(44, 188, 21, 23);
 		contentPane.add(otrIzv);
@@ -203,12 +202,39 @@ public class Tests extends JFrame {
 			paraditJaut();
 		}
 	private void iesniegtAtb() {
-		
+		Jautajums pasreizejaisJautajums = test.getjautIzv();
+		int pareizaAtb = pasreizejaisJautajums.getpareizaAtb();
+		int izveletaAtb = -1;
+		 if(pirmIzv.isSelected()) {
+			 izveletaAtb = 1;
+		 }else if(otrIzv.isSelected()) {
+			 izveletaAtb = 2;
+		 }else if(tresIzv.isSelected()) {
+			 izveletaAtb = 3;
+	}else if(cetIzv.isSelected()) {
+		 izveletaAtb = 4;
+	}
+		 if(izveletaAtb == pareizaAtb) {
+			 test.mainitRez();
+			 JOptionPane.showMessageDialog(this, "Pareizi");
+		 }else {
+			 JOptionPane.showMessageDialog(this, "Nepareizi");
+		 }
+		 test.nakosaisJaut();
+		 grupa.clearSelection();
+		 paraditJaut();
 	}
 	private void paraditJaut() {
 		if(!test.irnakosaisJaut()) {
 			JOptionPane.showMessageDialog(this,  "Paldies par testu, jūsu rezūltāts ir "+test.getRez()+" no "+test.getJautDaudzums());
+			return;
 		}
 		Jautajums pasreizejaisJautajums = test.getjautIzv();
+		Jautaj.setText(pasreizejaisJautajums.getJaut());
+		String[] opcijas = pasreizejaisJautajums.getIzveles();
+		pirmTeksts.setText(opcijas[0]);
+		otrTeksts.setText(opcijas[1]);
+		ctrTeksts.setText(opcijas[2]);
+		trsTeksts.setText(opcijas[3]);
 	}
 }
