@@ -57,10 +57,10 @@ public class Menu extends JFrame {
 					}
 			    });
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Vārds ir pārāk īss!");
+		JLabel lblNewLabel_5_1 = new JLabel("Vārds ir pārāk īss, vai satur ciparu!");
 		lblNewLabel_5_1.setForeground(new Color(128, 0, 0));
 		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_5_1.setBounds(264, 226, 258, 30);
+		lblNewLabel_5_1.setBounds(264, 226, 356, 30);
 		lblNewLabel_5_1.setVisible(false);
 		contentPane.add(lblNewLabel_5_1);
 		

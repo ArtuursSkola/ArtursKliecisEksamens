@@ -17,55 +17,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-class Jautajums{
-	private String jaut;
-	private String[] izveles;
-	private int pareizaAtb;
-	
-	public Jautajums(String jaut, String[] izveles, int pareizaAtb) {
-		this.jaut = jaut;
-		this.izveles = izveles;
-		this.pareizaAtb = pareizaAtb;
-	}
-	public String getJaut() {
-		return jaut;
-	}
-	public String[] getIzveles() {
-		return izveles;
-	}
-	public int getpareizaAtb() {
-		return pareizaAtb;
-	}
-}
-class Test{
-	private Jautajums[] jautajums;
-	private int jautIzv;
-	private int rez;
-	
-	public Test(Jautajums[] jautajums) {
-		this.jautajums = jautajums;
-		this.jautIzv = 0;
-		this.rez = 0;
-	}
-	public Jautajums getjautIzv() {
-		return jautajums[jautIzv];
-	}
-	public void mainitRez() {
-		rez++;
-	}
-	public boolean irnakosaisJaut() {
-		return jautIzv < jautajums.length;
-	}
-	public void nakosaisJaut() {
-		jautIzv++;
-	}
-	public int getJautDaudzums() {
-		return jautajums.length;
-	}
-	public int getRez() {
-		return rez;
-	}
-}
 public class Tests extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -76,6 +27,7 @@ public class Tests extends JFrame {
 	private JLabel pirmTeksts, otrTeksts, trsTeksts, ctrTeksts;
 	private ButtonGroup grupa;
 	private JButton Iesniegt;
+	private JLabel Ramis;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -112,6 +64,14 @@ public class Tests extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		Jautaj = new JLabel("New label");
+		Jautaj.setFont(new Font("Tahoma", Font.BOLD, 19));
+		Jautaj.setForeground(new Color(0, 0, 0));
+		Jautaj.setBounds(358, 89, 216, 157);
+		contentPane.add(Jautaj);
+		
+		
 		Iesniegt = new JButton("Iesniegt");
 		Iesniegt.setBackground(new Color(0, 0, 0));
 		Iesniegt.setForeground(new Color(0, 0, 0));
@@ -123,11 +83,6 @@ public class Tests extends JFrame {
 			}
 		});
 		
-		Jautaj = new JLabel("New label");
-		Jautaj.setForeground(new Color(255, 255, 255));
-		Jautaj.setBounds(394, 158, 216, 157);
-		contentPane.add(Jautaj);
-		
 		pirmTeksts = new JLabel("New label");
 		pirmTeksts.setForeground(new Color(255, 255, 255));
 		pirmTeksts.setBounds(78, 131, 188, 25);
@@ -137,6 +92,12 @@ public class Tests extends JFrame {
 		otrTeksts.setForeground(Color.WHITE);
 		otrTeksts.setBounds(78, 187, 188, 25);
 		contentPane.add(otrTeksts);
+		
+		Ramis = new JLabel("New label");
+		Ramis.setBounds(329, 89, 445, 305);
+		ImageIcon ramis = new ImageIcon(getClass().getResource("/resources/ramis.jpg"));
+		Ramis.setIcon(ramis);
+		contentPane.add(Ramis);
 		
 		trsTeksts = new JLabel("New label");
 		trsTeksts.setForeground(Color.WHITE);
@@ -226,12 +187,16 @@ public class Tests extends JFrame {
 	}
 	private void paraditJaut() {
 		if(!test.irnakosaisJaut()) {
-			JOptionPane.showMessageDialog(this,  "Paldies par testu, jūsu rezūltāts ir "+test.getRez()+" no "+test.getJautDaudzums());
+			int jautSkaits = test.getJautDaudzums();
+			int pareizi = test.getRez();
+			int nepareizi = jautSkaits - pareizi;
+			JOptionPane.showMessageDialog(this,  "Paldies par testu, jūsu rezūltāts ir "+pareizi+" no "+test.getJautDaudzums());
 			return;
 		}
 		Jautajums pasreizejaisJautajums = test.getjautIzv();
-		Jautaj.setText(pasreizejaisJautajums.getJaut());
+		String jaut = pasreizejaisJautajums.getJaut();
 		String[] opcijas = pasreizejaisJautajums.getIzveles();
+		Jautaj.setText(jaut);
 		pirmTeksts.setText(opcijas[0]);
 		otrTeksts.setText(opcijas[1]);
 		ctrTeksts.setText(opcijas[2]);
