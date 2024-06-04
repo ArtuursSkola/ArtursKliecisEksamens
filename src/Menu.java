@@ -11,11 +11,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
+import javax.swing.SwingConstants;
 
 public class Menu extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField name;
 
 
 	public static void main(String[] args) {
@@ -39,22 +43,6 @@ public class Menu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setBorder(null);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setIcon(new ImageIcon(getClass().getResource("/resources/poga.png")));;
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Tests newWindow = new Tests();
-				newWindow.setVisible(true);
-				Menu.this.dispose();
-			}
-			
-		});
-		
-
-
-
 		
 		JButton btnNewButton_1 = new JButton("");
 		btnNewButton_1.setBorder(null);
@@ -69,6 +57,60 @@ public class Menu extends JFrame {
 					}
 			    });
 		
+		JLabel lblNewLabel_5_1 = new JLabel("Vārds ir pārāk īss!");
+		lblNewLabel_5_1.setForeground(new Color(128, 0, 0));
+		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lblNewLabel_5_1.setBounds(264, 226, 258, 30);
+		lblNewLabel_5_1.setVisible(false);
+		contentPane.add(lblNewLabel_5_1);
+		
+		JLabel lblNewLabel_5 = new JLabel("Vārdā nedrīkst būt cipari!");
+		lblNewLabel_5.setForeground(new Color(128, 0, 0));
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lblNewLabel_5.setBounds(264, 257, 258, 30);
+		lblNewLabel_5.setVisible(false);
+		contentPane.add(lblNewLabel_5);
+
+		JLabel lblNewLabel_4 = new JLabel("Vārds:");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 21));
+		lblNewLabel_4.setForeground(new Color(255, 255, 255));
+		lblNewLabel_4.setBounds(228, 295, 248, 38);
+		contentPane.add(lblNewLabel_4);
+		
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setBorder(null);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setIcon(new ImageIcon(getClass().getResource("/resources/poga.png")));;
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String vards = name.getText();
+				boolean tikaiCipari = vards.matches("[a-zA-Z]+");
+				boolean garums = !(vards.length() >= 3);
+				if(!tikaiCipari) {
+					lblNewLabel_5.setVisible(true);
+				}else {
+					lblNewLabel_5.setVisible(false);
+				}
+				if(garums) {
+					lblNewLabel_5_1.setVisible(true);
+				}
+				if(vards.length() >= 3 && tikaiCipari) {
+				Tests newWindow = new Tests();
+				newWindow.setVisible(true);
+				Menu.this.dispose();
+			}
+			}
+		});
+		
+		
+		name = new JTextField();
+		name.setHorizontalAlignment(SwingConstants.CENTER);
+		name.setToolTipText("");
+		name.setBounds(301, 294, 188, 38);
+		contentPane.add(name);
+		name.setColumns(10);
+		
 		JLabel lblNewLabel_3 = new JLabel("Artūrs Kliečis 2PT");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
@@ -76,9 +118,9 @@ public class Menu extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_2 = new JLabel("Tests par ciklu ar pēcnosacijumu");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 38));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 43));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		lblNewLabel_2.setBounds(71, -21, 703, 274);
+		lblNewLabel_2.setBounds(39, 22, 764, 274);
 		contentPane.add(lblNewLabel_2);
 				
 			
@@ -87,16 +129,20 @@ public class Menu extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("Sākt testu");
 		lblNewLabel_1.setFont(new Font("Trebuchet MS", Font.BOLD, 24));
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_1.setBounds(340, 292, 153, 30);
+		lblNewLabel_1.setBounds(335, 367, 153, 30);
 		contentPane.add(lblNewLabel_1);
-		btnNewButton.setBounds(269, 243, 258, 125);
+		btnNewButton.setBounds(264, 318, 258, 125);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(0, 0, 784, 561);
 		contentPane.add(lblNewLabel);
 		
-		ImageIcon bilde = new ImageIcon(getClass().getResource("/resources/back.jpg"));
+		ImageIcon bilde = new ImageIcon(getClass().getResource("/resources/backround.png"));
 		lblNewLabel.setIcon(bilde);
+		
+		JLabel label = new JLabel("New label");
+		label.setBounds(349, 239, 46, 14);
+		contentPane.add(label);
 	}
 }
