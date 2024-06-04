@@ -45,7 +45,7 @@ public class Tests extends JFrame {
 	public Tests() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Jautajums[] jautajums = {
-				new Jautajums("sss", new String[] {"1", "2", "3","4"}, 1),
+				new Jautajums("<html>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
 				new Jautajums("ddd", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("ee", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("qqq", new String[] {"1", "2", "3","4"}, 1),
@@ -65,10 +65,14 @@ public class Tests extends JFrame {
 		contentPane.setLayout(null);
 		
 		
-		Jautaj = new JLabel("New label");
+		Jautaj = new JLabel("");
+		Jautaj.setBackground(new Color(255, 255, 255));
+		Jautaj.setHorizontalAlignment(SwingConstants.LEFT);
+		Jautaj.setVerticalAlignment(SwingConstants.TOP);
 		Jautaj.setFont(new Font("Tahoma", Font.BOLD, 19));
 		Jautaj.setForeground(new Color(0, 0, 0));
-		Jautaj.setBounds(358, 89, 216, 157);
+		Jautaj.setBounds(346, 109, 365, 272);
+		Jautaj.setOpaque(true);
 		contentPane.add(Jautaj);
 		
 		
