@@ -48,7 +48,7 @@ public class Tests extends JFrame {
 				new Jautajums("<html>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
 				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==0);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 4),
 				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
-				new Jautajums("qqq", new String[] {"1", "2", "3","4"}, 1),
+				new Jautajums("<html> <hr>Ko programma izprintēs?: <hr><br> int a = 1; <br> do{ <br> System.out.print('N')<br>}while(a<=5);", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("rrr", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("yyy", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("uuu", new String[] {"1", "2", "3","4"}, 1),
