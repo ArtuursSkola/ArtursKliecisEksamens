@@ -46,8 +46,8 @@ public class Tests extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Jautajums[] jautajums = {
 				new Jautajums("<html>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
-				new Jautajums("ddd", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("ee", new String[] {"1", "2", "3","4"}, 1),
+				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==0);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 4),
+				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
 				new Jautajums("qqq", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("rrr", new String[] {"1", "2", "3","4"}, 1),
 				new Jautajums("yyy", new String[] {"1", "2", "3","4"}, 1),
@@ -71,7 +71,7 @@ public class Tests extends JFrame {
 		Jautaj.setVerticalAlignment(SwingConstants.TOP);
 		Jautaj.setFont(new Font("Tahoma", Font.BOLD, 19));
 		Jautaj.setForeground(new Color(0, 0, 0));
-		Jautaj.setBounds(346, 109, 365, 272);
+		Jautaj.setBounds(346, 109, 363, 272);
 		Jautaj.setOpaque(true);
 		contentPane.add(Jautaj);
 		
