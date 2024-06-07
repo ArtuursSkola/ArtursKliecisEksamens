@@ -14,6 +14,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 
@@ -185,9 +186,10 @@ public class Tests extends JFrame {
 		 izveletaAtb = 4;
 	}
 		 if(izveletaAtb == pareizaAtb) {
-			 test.mainitRez();
+			 test.mainitRez(true);
 			 JOptionPane.showMessageDialog(this, "Pareizi");
 		 }else {
+			 test.mainitRez(false);
 			 JOptionPane.showMessageDialog(this, "Nepareizi");
 		 }
 		 test.nakosaisJaut();
@@ -199,7 +201,16 @@ public class Tests extends JFrame {
 			int jautSkaits = test.getJautDaudzums();
 			int pareizi = test.getRez();
 			int nepareizi = jautSkaits - pareizi;
-			JOptionPane.showMessageDialog(this,  "Paldies par testu, jūsu rezūltāts ir "+pareizi+" no "+test.getJautDaudzums());
+			String nepareiziJaut = "";
+			List<Jautajums> nepareizasAtb = test.getNepareizasAtb();
+			for(Jautajums jaut : nepareizasAtb) {
+				nepareiziJaut += jaut.getJaut() +"Pareizā atbilde: "+jaut.getIzveles()[jaut.getpareizaAtb() - 1]+"\n\\n";
+			}
+			JOptionPane.showMessageDialog(this,  "Paldies par testu, jūsu rezūltāts ir "+pareizi+
+					" no "+test.getJautDaudzums()+
+					"\n Jautājumi uz kuriem jūs atbildējāt nepareizi: "+nepareiziJaut);
+
+			
 			return;
 		}
 		Jautajums pasreizejaisJautajums = test.getjautIzv();
