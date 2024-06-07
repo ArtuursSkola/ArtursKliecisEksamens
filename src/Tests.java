@@ -43,6 +43,7 @@ public class Tests extends JFrame {
 	}
 
 	public Tests() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Jautajums[] jautajums = {
 				new Jautajums("<html><hr>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?<hr>", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
