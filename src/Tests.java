@@ -47,16 +47,16 @@ public class Tests extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Jautajums[] jautajums = {
-				new Jautajums("<html><hr>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?<hr>", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
-				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==0);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 4),
-				new Jautajums("<html> <hr>Cik reizes ir garantēts, ka Do While cikls izpildīsies", new String[] {"Bezgalīgi", "Nevienu", "Vienu","Atkarībā, vai nosacijums ir nepatiess"}, 4),
-				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int x = 0; <br> do{ <br> System.out.print('Apsveicu');<br>}while(x==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
-				new Jautajums("<html> <hr>Ko programma izprintēs?: <hr><br> int a = 1; <br> do{ <br> System.out.print('N')<br>}while(a&lt;=5);", new String[] {"N", "NNNN", "Nekas","NNNNN"}, 3),
-				new Jautajums("<html> <hr>Kas tiks izprintēts konsolē <hr><br> int j = 0;<br> do{ <br> j++;<br> System.out.print(j+ ' ')<br>}while(j&lt;5);", new String[] {"0 1 2 3 4", "1 2 3 4 5", "Nekas","1 2 3 4"}, 2),
-				new Jautajums("<html><hr>Do While cikls tiks atkārtots, tiklīdz nosacijums kļūs ...", new String[] {"Nederīgs", "False", "Derīgs","True"}, 2),
-				new Jautajums("<html> <hr>Kas notiek, ja Do While cikla nosacijums nekad nav nepatiess", new String[] {"Cikls izpildīsies bezgalīgi", "Cikls izpildīsies vienu reizi", "Cikls parādīs kļūdu","Cikls neizpildīsies"}, 1),
-				new Jautajums("<html><hr> Kas tiks izprintēts komsolē?<hr><br> y = 32;<br>do{<br>System.out.print(y);<br>y++;<br>}while(y&lt;=30);", new String[] {"30", "31", "32","Nekas"}, 4),
-				new Jautajums("<html><hr>Kā atšķiras Do While cikls ar While ciklu?<hr>", new String[] {"<html>Do While cikls pārbauda cikla nosacijumu pirms tā darbības", "<html>While cikls pārbauda cikla nosacijumu pēc cikla darbības", "<html>Do While cikls nekad nepārbauda cikla nosacijumu","<html>Do While cikls pārbauda nosacijumu pēc cikla darbības"}, 3),
+				new Jautajums("<html>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
+				new Jautajums("<html> Cik reizes programma izprintēs tekstu?: <br><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==0);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 3),
+				new Jautajums("<html> Cik reizes ir garantēts, ka Do While cikls izpildīsies", new String[] {"Bezgalīgi", "Nevienu", "Vienu","Atkarībā, vai nosacijums ir nepatiess"}, 3),
+				new Jautajums("<html> Cik reizes programma izprintēs tekstu?: <br><br> int x = 0; <br> do{ <br> System.out.print('Apsveicu');<br>}while(x==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
+				new Jautajums("<html> Ko programma izprintēs?: <br> int a = 1; <br> do{ <br> System.out.print('N')<br>}while(a&lt;=5);", new String[] {"N", "NNNN", "Nekas","NNNNN"}, 4),
+				new Jautajums("<html> Kas tiks izprintēts konsolē <br><br> int j = 0;<br> do{ <br> j++;<br> System.out.print(j+ ' ')<br>}while(j&lt;5);", new String[] {"0 1 2 3 4", "1 2 3 4 5", "Nekas","1 2 3 4"}, 2),
+				new Jautajums("<html>Do While cikls tiks atkārtots, tiklīdz nosacijums kļūs ...", new String[] {"Nederīgs", "False", "Derīgs","True"}, 2),
+				new Jautajums("<html> Kas notiek, ja Do While cikla nosacijums nekad nav nepatiess", new String[] {"Cikls izpildīsies bezgalīgi", "Cikls izpildīsies vienu reizi", "Cikls parādīs kļūdu","Cikls neizpildīsies"}, 1),
+				new Jautajums("<html> Kas tiks izprintēts komsolē?<br><br> y = 32;<br>do{<br>System.out.print(y);<br>y++;<br>}while(y&lt;=30);", new String[] {"30", "31", "32","Nekas"}, 3),
+				new Jautajums("<html>Kā atšķiras Do While cikls ar While ciklu?", new String[] {"<html>Do While cikls pārbauda cikla nosacijumu pirms tā darbības", "<html>While cikls pārbauda cikla nosacijumu pēc cikla darbības", "<html>Do While cikls nekad nepārbauda cikla nosacijumu","<html>Do While cikls pārbauda nosacijumu pēc cikla darbības"}, 4),
 		};
 		test = new Test(jautajums);
 		setBounds(100, 100, 800, 600);
@@ -201,16 +201,17 @@ public class Tests extends JFrame {
 			int jautSkaits = test.getJautDaudzums();
 			int pareizi = test.getRez();
 			int nepareizi = jautSkaits - pareizi;
-			String nepareiziJaut = "";
+			
+			StringBuilder nepareiziJaut = new StringBuilder("<html>");
 			List<Jautajums> nepareizasAtb = test.getNepareizasAtb();
 			for(Jautajums jaut : nepareizasAtb) {
-				nepareiziJaut += jaut.getJaut() +"Pareizā atbilde: "+jaut.getIzveles()[jaut.getpareizaAtb() - 1]+"\n\\n";
+				nepareiziJaut.append(jaut.getJaut()).append("<br> Jautājuma pareizā atbilde: ").append(jaut.getIzveles()[jaut.getpareizaAtb()-1]).append("<br><br>");
 			}
-			JOptionPane.showMessageDialog(this,  "Paldies par testu, jūsu rezūltāts ir "+pareizi+
+			JOptionPane.showMessageDialog(this,  "<html>Paldies par testu, jūsu rezūltāts ir "+pareizi+
 					" no "+test.getJautDaudzums()+
-					"\n Jautājumi uz kuriem jūs atbildējāt nepareizi: "+nepareiziJaut);
+					"<br><br>Jautājumi uz kuriem jūs atbildējāt nepareizi: <br><br>"+nepareiziJaut.toString()+"</html>");
 
-			
+			Tests.this.dispose();
 			return;
 		}
 		Jautajums pasreizejaisJautajums = test.getjautIzv();
@@ -219,7 +220,7 @@ public class Tests extends JFrame {
 		Jautaj.setText(jaut);
 		pirmTeksts.setText(opcijas[0]);
 		otrTeksts.setText(opcijas[1]);
-		ctrTeksts.setText(opcijas[2]);
-		trsTeksts.setText(opcijas[3]);
+		trsTeksts.setText(opcijas[2]);
+		ctrTeksts.setText(opcijas[3]);
 	}
 }
