@@ -45,16 +45,16 @@ public class Tests extends JFrame {
 	public Tests() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Jautajums[] jautajums = {
-				new Jautajums("<html>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
+				new Jautajums("<html><hr>Do while ciklā, kad cikls pārbaudīs, vai cikla nosacijums ir patiess?<hr>", new String[] {"Nekad", "Beigās", "Sākumā","Vidū"}, 2),
 				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==0);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 4),
-				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
-				new Jautajums("<html> <hr>Ko programma izprintēs?: <hr><br> int a = 1; <br> do{ <br> System.out.print('N')<br>}while(a<=5);", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("rrr", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("yyy", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("uuu", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("iii", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("mmm", new String[] {"1", "2", "3","4"}, 1),
-				new Jautajums("bbb", new String[] {"1", "2", "3","4"}, 1),
+				new Jautajums("<html> <hr>Cik reizes ir garantēts, ka Do While cikls izpildīsies", new String[] {"Bezgalīgi", "Nevienu", "Vienu","Atkarībā, vai nosacijums ir nepatiess"}, 4),
+				new Jautajums("<html> <hr>Cik reizes programma izprintēs tekstu?: <hr><br> int x = 0; <br> do{ <br> System.out.print('Apsveicu');<br>}while(x==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
+				new Jautajums("<html> <hr>Ko programma izprintēs?: <hr><br> int a = 1; <br> do{ <br> System.out.print('N')<br>}while(a&lt;=5);", new String[] {"N", "NNNN", "Nekas","NNNNN"}, 3),
+				new Jautajums("<html> <hr>Kas tiks izprintēts konsolē <hr><br> int j = 0;<br> do{ <br> j++;<br> System.out.print(j+ ' ')<br>}while(j&lt;5);", new String[] {"0 1 2 3 4", "1 2 3 4 5", "Nekas","1 2 3 4"}, 2),
+				new Jautajums("<html><hr>Do While cikls tiks atkārtots, tiklīdz nosacijums kļūs ...", new String[] {"Nederīgs", "False", "Derīgs","True"}, 2),
+				new Jautajums("<html> <hr>Kas notiek, ja Do While cikla nosacijums nekad nav nepatiess", new String[] {"Cikls izpildīsies bezgalīgi", "Cikls izpildīsies vienu reizi", "Cikls parādīs kļūdu","Cikls neizpildīsies"}, 1),
+				new Jautajums("<html><hr> Kas tiks izprintēts komsolē?<hr><br> y = 32;<br>do{<br>System.out.print(y);<br>y++;<br>}while(y&lt;=30);", new String[] {"30", "31", "32","Nekas"}, 4),
+				new Jautajums("<html><hr>Kā atšķiras Do While cikls ar While ciklu?<hr>", new String[] {"<html>Do While cikls pārbauda cikla nosacijumu pirms tā darbības", "<html>While cikls pārbauda cikla nosacijumu pēc cikla darbības", "<html>Do While cikls nekad nepārbauda cikla nosacijumu","<html>Do While cikls pārbauda nosacijumu pēc cikla darbības"}, 3),
 		};
 		test = new Test(jautajums);
 		setBounds(100, 100, 800, 600);
@@ -71,7 +71,7 @@ public class Tests extends JFrame {
 		Jautaj.setVerticalAlignment(SwingConstants.TOP);
 		Jautaj.setFont(new Font("Tahoma", Font.BOLD, 19));
 		Jautaj.setForeground(new Color(0, 0, 0));
-		Jautaj.setBounds(346, 109, 363, 272);
+		Jautaj.setBounds(346, 109, 365, 272);
 		Jautaj.setOpaque(true);
 		contentPane.add(Jautaj);
 		
@@ -89,12 +89,12 @@ public class Tests extends JFrame {
 		
 		pirmTeksts = new JLabel("New label");
 		pirmTeksts.setForeground(new Color(255, 255, 255));
-		pirmTeksts.setBounds(78, 131, 188, 25);
+		pirmTeksts.setBounds(78, 131, 241, 45);
 		contentPane.add(pirmTeksts);
 		
 		otrTeksts = new JLabel("New label");
 		otrTeksts.setForeground(Color.WHITE);
-		otrTeksts.setBounds(78, 187, 188, 25);
+		otrTeksts.setBounds(78, 187, 241, 48);
 		contentPane.add(otrTeksts);
 		
 		Ramis = new JLabel("New label");
@@ -105,13 +105,13 @@ public class Tests extends JFrame {
 		
 		trsTeksts = new JLabel("New label");
 		trsTeksts.setForeground(Color.WHITE);
-		trsTeksts.setBounds(78, 246, 188, 25);
+		trsTeksts.setBounds(78, 246, 241, 48);
 		contentPane.add(trsTeksts);
 		
 		
 		ctrTeksts = new JLabel("New label");
 		ctrTeksts.setForeground(Color.WHITE);
-		ctrTeksts.setBounds(78, 302, 188, 25);
+		ctrTeksts.setBounds(78, 302, 241, 48);
 		contentPane.add(ctrTeksts);
 		
 		JLabel lblNewLabel_1 = new JLabel("1. Jautājums");

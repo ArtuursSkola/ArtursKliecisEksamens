@@ -57,19 +57,6 @@ public class Menu extends JFrame {
 					}
 			    });
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Vārds ir pārāk īss, vai satur ciparu!");
-		lblNewLabel_5_1.setForeground(new Color(255, 0, 0));
-		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_5_1.setBounds(264, 226, 356, 30);
-		lblNewLabel_5_1.setVisible(false);
-		contentPane.add(lblNewLabel_5_1);
-		
-		JLabel lblNewLabel_5 = new JLabel("Vārdā nedrīkst būt cipari!");
-		lblNewLabel_5.setForeground(new Color(255, 0, 0));
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_5.setBounds(264, 257, 258, 30);
-		lblNewLabel_5.setVisible(false);
-		contentPane.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_4 = new JLabel("Vārds:");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 21));
@@ -77,6 +64,19 @@ public class Menu extends JFrame {
 		lblNewLabel_4.setBounds(228, 295, 248, 38);
 		contentPane.add(lblNewLabel_4);
 		
+		final JLabel lblNewLabel_5_1 = new JLabel("Vārds ir pārāk īss, vai satur ciparu!");
+		lblNewLabel_5_1.setForeground(new Color(255, 0, 0));
+		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lblNewLabel_5_1.setBounds(264, 226, 356, 30);
+		lblNewLabel_5_1.setVisible(false);
+		contentPane.add(lblNewLabel_5_1);
+		
+		final JLabel lblNewLabel_5 = new JLabel("Vārdā nedrīkst būt cipari!");
+		lblNewLabel_5.setForeground(new Color(255, 0, 0));
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lblNewLabel_5.setBounds(264, 257, 258, 30);
+		lblNewLabel_5.setVisible(false);
+		contentPane.add(lblNewLabel_5);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setBorder(null);
