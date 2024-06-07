@@ -83,7 +83,11 @@ public class Tests extends JFrame {
 		contentPane.add(Iesniegt);
 		Iesniegt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(pirmIzv.isSelected() || otrIzv.isSelected() || cetIzv.isSelected() || tresIzv.isSelected()) {
 				iesniegtAtb();
+			}else {
+				JOptionPane.showMessageDialog(null, "Lūdzu ivēlaties atbildi!", "Kļūda", JOptionPane.ERROR_MESSAGE);
+			}
 			}
 		});
 		
