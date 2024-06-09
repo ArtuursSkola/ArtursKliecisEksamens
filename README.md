@@ -12,6 +12,7 @@ iekļauti jebkādi simboli vai cipari.
 &ensp;
  
  Sākuma logs ar kļūdu:
+  
 ![image](https://github.com/ArtuursSkola/ArtursKliecisEksamens/assets/165995209/c12d46f0-89a6-4f98-9e77-de6de6c61f26)
  
 Ja lietotājs ievadīs vārdu, kas ir pārāk īss vai saturēs kādu simbolu vai ciparu, logs izmetīs brīdinājuma tekstu.
@@ -27,6 +28,7 @@ ir redzams logs, kas satur jautājumu uz kuru lietotājam ir jāatbild
    
 &ensp;
 Testa logs ar kļudu
+ 
 ![image](https://github.com/ArtuursSkola/ArtursKliecisEksamens/assets/165995209/e0cdde6a-a1e1-4b55-a834-138bcb635b0b)
   
  
