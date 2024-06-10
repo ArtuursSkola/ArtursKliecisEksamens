@@ -1,6 +1,5 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
+import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +11,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
 import javax.swing.SwingConstants;
 
 public class Menu extends JFrame {
@@ -68,14 +66,14 @@ public class Menu extends JFrame {
 		final JLabel lblNewLabel_5_1 = new JLabel("Vārds ir pārāk īss, vai satur ciparu!");
 		lblNewLabel_5_1.setForeground(new Color(255, 0, 0));
 		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_5_1.setBounds(264, 226, 356, 30);
+		lblNewLabel_5_1.setBounds(228, 227, 356, 30);
 		lblNewLabel_5_1.setVisible(false);
 		contentPane.add(lblNewLabel_5_1);
 		
-		final JLabel lblNewLabel_5 = new JLabel("Vārdā nedrīkst būt cipari!");
+		final JLabel lblNewLabel_5 = new JLabel("Vārdā nedrīkst būt cipari vai simboli!");
 		lblNewLabel_5.setForeground(new Color(255, 0, 0));
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_5.setBounds(264, 257, 258, 30);
+		lblNewLabel_5.setBounds(228, 254, 377, 30);
 		lblNewLabel_5.setVisible(false);
 		contentPane.add(lblNewLabel_5);
 		
@@ -86,22 +84,29 @@ public class Menu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String vards = name.getText();
+				boolean derigs = true;
 				boolean tikaiCipari = vards.matches("[a-zA-Z]+");
-				boolean garums = !(vards.length() >= 3);
+				boolean garums = (vards.length() >= 3 && vards.length() < 12);
 				if(!tikaiCipari) {
 					lblNewLabel_5.setVisible(true);
+					derigs = false;
 				}else {
 					lblNewLabel_5.setVisible(false);
 				}
-				if(garums) {
+				if(!garums) {
 					lblNewLabel_5_1.setVisible(true);
+					derigs = false;
 				}
-				if(vards.length() >= 3 && tikaiCipari) {
+				if(vards.length() >= 3 && tikaiCipari && vards.length() < 12) {
+				derigs = true;
+				}
+				if(derigs == true) {
 				Tests newWindow = new Tests();
 				newWindow.setVisible(true);
 				Menu.this.dispose();
 			}
 			}
+			
 		});
 		
 		

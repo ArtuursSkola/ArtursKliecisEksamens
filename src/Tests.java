@@ -53,11 +53,11 @@ public class Tests extends JFrame {
 				new Jautajums("<html> Cik reizes programma izprintēs tekstu?: <br><br> int a = 0; <br> do{ <br> System.out.print('Sveiki')<br>}while(a==0);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 3),
 				new Jautajums("<html> Cik reizes ir garantēts, ka Do While cikls izpildīsies", new String[] {"Bezgalīgi", "Nevienu", "Vienu","Atkarībā, vai nosacijums ir nepatiess"}, 3),
 				new Jautajums("<html> Cik reizes programma izprintēs tekstu?: <br><br> int x = 0; <br> do{ <br> System.out.print('Apsveicu');<br>}while(x==2);", new String[] {"Vienu reizi", "Nevienu reizi", "Bezgalīgi","Divas reizes"}, 1),
-				new Jautajums("<html> Ko programma izprintēs?: <br> int a = 1; <br> do{ <br> System.out.print('N')<br>}while(a&lt;=5);", new String[] {"N", "NNNN", "Nekas","NNNNN"}, 4),
+				new Jautajums("<html> Ko programma izprintēs?: <br> int a = 1; <br> do{ <br> System.out.print('N')<br>a++; <br>}while(a&lt;=5);", new String[] {"N", "NNNN", "Nekas","NNNNN"}, 4),
 				new Jautajums("<html> Kas tiks izprintēts konsolē <br><br> int j = 0;<br> do{ <br> j++;<br> System.out.print(j+ ' ')<br>}while(j&lt;5);", new String[] {"0 1 2 3 4", "1 2 3 4 5", "Nekas","1 2 3 4"}, 2),
 				new Jautajums("<html>Do While cikls tiks atkārtots, tiklīdz nosacijums kļūs ...", new String[] {"Nederīgs", "False", "Derīgs","True"}, 2),
 				new Jautajums("<html> Kas notiek, ja Do While cikla nosacijums nekad nav nepatiess", new String[] {"Cikls izpildīsies bezgalīgi", "Cikls izpildīsies vienu reizi", "Cikls parādīs kļūdu","Cikls neizpildīsies"}, 1),
-				new Jautajums("<html> Kas tiks izprintēts komsolē?<br><br> y = 32;<br>do{<br>System.out.print(y);<br>y++;<br>}while(y&lt;=30);", new String[] {"30", "31", "32","Nekas"}, 3),
+				new Jautajums("<html> Kas tiks izprintēts konsolē?<br><br> y = 32;<br>do{<br>System.out.print(y);<br>y++;<br>}while(y&lt;=30);", new String[] {"30", "31", "32","Nekas"}, 3),
 				new Jautajums("<html>Kā atšķiras Do While cikls ar While ciklu?", new String[] {"<html>Do While cikls pārbauda cikla nosacijumu pirms tā darbības", "<html>While cikls pārbauda cikla nosacijumu pēc cikla darbības", "<html>Do While cikls nekad nepārbauda cikla nosacijumu","<html>Do While cikls pārbauda nosacijumu pēc cikla darbības"}, 4),
 			//Pievienoju visus testa jautājumus, visi jautājumi ir savienoti ar Jautajums klase, kas ļauj programmai uzzināt atbildes pareizo jautājumu	
 		};
@@ -82,7 +82,7 @@ public class Tests extends JFrame {
 		
 		
 		Iesniegt = new JButton("Iesniegt");
-		Iesniegt.setBackground(new Color(0, 0, 0));
+		Iesniegt.setBackground(new Color(192, 192, 192));
 		Iesniegt.setForeground(new Color(0, 0, 0));
 		Iesniegt.setBounds(329, 434, 136, 48);
 		contentPane.add(Iesniegt);
@@ -92,7 +92,6 @@ public class Tests extends JFrame {
 				iesniegtAtb();
 			}else {
 				JOptionPane.showMessageDialog(null, "Lūdzu ivēlaties atbildi!", "Kļūda", JOptionPane.ERROR_MESSAGE);
-				//Poga iesniegt nestrādās, kamēr lietotājs nebūs izvēlējies vienu no četrām atbildēm
 			}
 			}
 		});
@@ -125,7 +124,7 @@ public class Tests extends JFrame {
 		contentPane.add(ctrTeksts);
 		
 
-		lblNewLabel_1 = new JLabel(jautCip+". Jautājums");
+		lblNewLabel_1 = new JLabel(jautCip+". Jautājums"); 
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 34));
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(258, 3, 386, 59);
@@ -202,25 +201,21 @@ public class Tests extends JFrame {
 		 }
 		 test.nakosaisJaut();
 		 jautCip ++;
-		 
 		 grupa.clearSelection();
 		 paraditJaut();
-	}
+		}
 	private void paraditJaut() {
 		if(!test.irnakosaisJaut()) {
-			int jautSkaits = test.getJautDaudzums(); 
 			int pareizi = test.getRez();
-			int nepareizi = jautSkaits - pareizi;
-			
 			StringBuilder nepareiziJaut = new StringBuilder("<html>");
 			List<Jautajums> nepareizasAtb = test.getNepareizasAtb(); //Programma dabūn getter no Test klases un izveido List ar nepareiziem jautājumiem
 			for(Jautajums jaut : nepareizasAtb) {
 				nepareiziJaut.append(jaut.getJaut()).append("<br> Jautājuma pareizā atbilde: ").append(jaut.getIzveles()[jaut.getpareizaAtb()-1]).append("<br><br>");
 				//Programma Saglabā nepareizās atbildes un tās testa beigās izvada ar jautājuma pareizo atbildi
 			}
-			JOptionPane.showMessageDialog(this,  "<html>Paldies par testu, jūsu rezūltāts ir "+pareizi+ //Programma izvada testa rezultātus
+			JOptionPane.showMessageDialog(this,  "<html><hr>Paldies par testu, jūsu rezūltāts ir "+pareizi+ //Programma izvada testa rezultātus
 					" no "+test.getJautDaudzums()+
-					"<br><br>Jautājumi uz kuriem jūs atbildējāt nepareizi: <br><br>"+nepareiziJaut.toString()+"</html>"); 
+					"<br><br><hr><hr>Jautājumi uz kuriem jūs atbildējāt nepareizi: <hr><br><br>"+nepareiziJaut.toString()+"</html>"); 
 			//Programma izvada jautājumus uz kuriem lietotājs ir atbildējis nepareizi
 			Tests.this.dispose();
 			return;
@@ -234,6 +229,6 @@ public class Tests extends JFrame {
 		otrTeksts.setText(opcijas[1]);
 		trsTeksts.setText(opcijas[2]);
 		ctrTeksts.setText(opcijas[3]);
-		lblNewLabel_1.setText(jautCip+". Jautājums");
+		lblNewLabel_1.setText(jautCip+". Jautājums"); // Jautājuma cipars mainās, kad tiek parādīts nākošais jautājums
 	}
 }
