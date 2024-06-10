@@ -1,5 +1,18 @@
 # Eksāmena Darbs par ciklu ar pēcnosacijumu
+
+Java programma, kas lietotājam liek ievadīt vārdu, lai identificētu, kas pilda testu un tad 
+lietotājam uzdod 10 jautājumus par tēmu cikls ar pēcnosacijumu, lai pārbaudītu lietotāja 
+zināšanas par tēmu. Programmā ir tikai 1 pareizā atbilde no 4, pēc lietotāja atbildes
+ievades, programma uzrāda, vai lietotāja izvēlētā atbilde ir pareiza vai nē un testa beigās
+lietotājam tiek izvadīts viņa/viņas rezūltāts, cik punktus ir ieguvis/ieguvusi no 10 jautājumiem.
+Lietotājam arī tiek parādītas visas nepareizās atbildes uz kurām bija atbildēts nepareizi un pareizā
+atbilde uz jautājumu.
+
+![transparent-java-logo-java-logo-with-blue-and-orange-color-1710879311376-removebg-preview](https://github.com/ArtuursSkola/ArtursKliecisEksamens/assets/165995209/f995ea58-875d-4b7e-a22d-b9d64847f43f)
+-
+&ensp; 
  
+
 Sākuma logs:
 &ensp; 
 
@@ -37,6 +50,7 @@ Ja lietotājs nav atzīmējis nevienu atbildi, programma izvadīs kļūdas ziņu
  &ensp;
   
 Testa logs ar pareizo atbildi
+ 
 ![image](https://github.com/ArtuursSkola/ArtursKliecisEksamens/assets/165995209/ac012a03-92af-4fd6-a128-ca4cbacfcd46)
  
 Ja lietotājs ir atbildējis uz jautājumu pareizi, programma izvdada JOptionPane ziņu informējot lietotāju, ka izvēlēta
@@ -57,3 +71,18 @@ atbilde ir nepareiza
 Šajā logā ir redzam, cik punktus lietotājis ir dabujis, jeb uz cik jautājumiem lietotājs ir atbildējis no 10. Logā ir redzams visas nepareizās
 atbildes uz kurām lietotājs ir atbildējis nepareizi un zem jautājuma ir pareizā abilde.
 
+&ensp;
+
+ # Testa UML diagrammas
+
+<h2>1. Aktivitāšu diagramma:</h2>
+
+
+![AktivitasuDiagramma drawio](https://github.com/ArtuursSkola/ArtursKliecisEksamens/assets/165995209/02d948f2-6910-4625-95d7-921c31ee34f1)
+
+
+
+<h2>2. Use Case diagramma:</h2>
+
+
+![CaseDiagramma drawio](https://github.com/ArtuursSkola/ArtursKliecisEksamens/assets/165995209/fa425857-f80e-48ea-8420-7891d586c733)
